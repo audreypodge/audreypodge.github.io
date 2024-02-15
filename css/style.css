@@ -1,0 +1,193 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe0e0;
+    color: #333;
+    /* font-size: 24px; */
+}
+
+header, footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #ffcccc;
+}
+h1{
+    color: #d6336c;
+    text-align: center;
+    font-size: 28px;
+}
+h2 {
+    color: #d6336c;
+    text-align: center;
+    font-size: 24px;
+}
+
+h3 {
+    color:#d6336c;
+    font-size: 20px;
+    text-align: center;
+}
+
+h4{
+    color: #d6336c;
+    font-size: 24px;
+    text-align: center;
+}
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* audio {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+} */
+
+footer p {
+    color: #666;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    max-width: 800px; /* Adjust based on the new card size */
+    margin: 20px auto;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; /* Adjusted for larger game size */
+    max-width: 1200px; /* You can adjust this value as needed */
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.card {
+    width: 160px; /* Increased from the original size */
+    height: 160px; /* Increased from the original size */
+    perspective: 1000px;
+    margin: 10px;
+}
+
+.card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    transform: rotateY(0deg); /* Start unflipped */
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg); /* Flip to reveal image */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.card-front::after {
+    content: "❤️"; /* Using a heart emoji */
+    font-size: 4em; /* Adjust size as needed */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card-back {
+    background: #000;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+}
+#date-night #question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start; /* Align items to the start of the container */
+}
+
+#date-night #question-container button {
+    width: 75%; /* Make buttons fill the container */
+    margin-bottom: 10px; /* Add space between buttons */
+    padding: 15px 20px; /* Adequate padding for tap targets */
+    background-color: #b82e5f; /* Darker pink/magenta */
+    color: #ffffff; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners for aesthetics */
+    cursor: pointer; /* Cursor pointer to indicate clickable */
+    font-size: 16px;
+    text-align: center;
+}
+
+#date-night #question-container button:hover {
+    background-color: #a02253; /* Even darker for hover */
+}
+
+.carousels-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.carousel {
+    flex-basis: 60%;
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #d6336c; /* Themed border color */
+    box-shadow: 0 0 15px #d6336c; /* Soft glow effect */
+    background-color: #ffcccc; /* Light background to match the site theme */
+}
+
+
+.carousell {
+    flex-basis: 60%; /* Adjust based on desired width of each carousel */
+    position: relative;
+    overflow: hidden;
+    height: 400px; /* Adjust as necessary */
+    padding: 10px; /* Adds space around the images, inside the carousel's border */
+    border: 2px solid #ccc; /* Example border, adjust as desired */
+    box-sizing: border-box; /* Ensures padding and border are included in the width/height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* If the .carousel class has direct flex properties, remove them or adjust as needed */
+.carouselll {
+    flex-basis: 60%; /* Adjust based on desired width of each carousel */
+    position: relative;
+    overflow: hidden;
+    height: 400px; /* Adjust as necessary */
+}
+
+.carousel-image {
+    max-width: 100%;
+    max-height: 100%; /* Adjust this to control image size */
+    width: auto;
+    height: auto;
+    opacity: 0; /* Make images invisible by default */
+    transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+    position: absolute; /* Overlay images on top of each other */
+}
